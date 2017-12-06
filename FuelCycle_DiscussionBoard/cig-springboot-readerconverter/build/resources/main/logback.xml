@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<Target>System.out</Target>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } --- [%15.15t{14}] %-40.40logger{39} : %m%n</pattern>
+		</encoder>
+	</appender>
+
+	
+	<!-- default logging levels -->
+	<logger name="org.springframework" level="INFO"/>
+	<logger name="org.apache.kafka" level="DEBUG"/>
+	<logger name="org.hibernate" level="INFO"/>
+	<logger name="org.mybatis" level="INFO"/>
+	<logger name="org.apache.ibatis" level="INFO"/>
+	<logger name="com.nm" level="DEBUG"/>
+
+	<root level="DEBUG" ref="STDOUT">
+		<appender-ref ref="STDOUT"/>
+	</root>
+</configuration>
